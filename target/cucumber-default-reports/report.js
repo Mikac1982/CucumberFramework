@@ -2,7 +2,15 @@ $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.
 formatter.feature({
   "name": "Add Employee",
   "description": "",
-  "keyword": "Feature"
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@addEmplyee"
+    },
+    {
+      "name": "@sprint5"
+    }
+  ]
 });
 formatter.background({
   "name": "",
@@ -10,7 +18,7 @@ formatter.background({
   "keyword": "Background"
 });
 formatter.before({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I logged in into OrangeHrm",
@@ -20,7 +28,7 @@ formatter.match({
   "location": "AddEmployeeSteps.i_logged_in_into_OrangeHrm()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I click on PIM link",
@@ -30,7 +38,7 @@ formatter.match({
   "location": "AddEmployeeSteps.i_click_on_PIM_link()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I click on AddEmployee link",
@@ -40,61 +48,72 @@ formatter.match({
   "location": "AddEmployeeSteps.i_click_on_AddEmployee_link()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Add Employee and Create Login Details",
+  "name": "Add Employee Labels Verification",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@createLD"
+      "name": "@addEmplyee"
+    },
+    {
+      "name": "@sprint5"
+    },
+    {
+      "name": "@regression"
+    },
+    {
+      "name": "@temp"
     }
   ]
 });
 formatter.step({
-  "name": "I provide firstname, middlename, lastname and location",
-  "keyword": "When "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "I click on create login details",
-  "keyword": "And "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "I provide all mandatory fields",
-  "keyword": "And "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "I click on save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "AddEmployeeSteps.i_click_on_save_button()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "I see employee is added successfully",
+  "name": "I see following labels",
+  "rows": [
+    {
+      "cells": [
+        "First Namessss"
+      ]
+    },
+    {
+      "cells": [
+        "Middle Name"
+      ]
+    },
+    {
+      "cells": [
+        "Last Name"
+      ]
+    },
+    {
+      "cells": [
+        "Employee Id"
+      ]
+    },
+    {
+      "cells": [
+        "Location"
+      ]
+    },
+    {
+      "cells": [
+        "Create Login Details"
+      ]
+    }
+  ],
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "AddEmployeeSteps.i_see_following_labels(DataTable)"
 });
+formatter.result({
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.orangehrm.steps.AddEmployeeSteps.i_see_following_labels(AddEmployeeSteps.java:118)\n\tat ✽.I see following labels(file:src/test/resources/features/AddEmployees.feature:36)\n",
+  "status": "failed"
+});
+formatter.embedding("image/png", "embedded0.png");
 formatter.after({
-  "status": "skipped"
+  "status": "passed"
 });
 });

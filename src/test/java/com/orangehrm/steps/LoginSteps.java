@@ -1,5 +1,8 @@
 package com.orangehrm.steps;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 
 import com.orangehrm.pages.HomePage;
@@ -65,9 +68,27 @@ public class LoginSteps extends CommonMethods {
 	@When("I enter invalid username and password I see errorMessage")
 	public void i_enter_invalid_username_and_password_I_see_errorMessage(DataTable wrongCredentials) {
 	    
-		
-		
-		
+		List<Map<String, String>> maps = wrongCredentials.asMaps();
+	//	entire map we are retrieving as list of 2 strings
+		for(Map<String, String> map:maps) {
+			
+			//printing values of each key
+			System.out.println(map.get("UserName"));
+			System.out.println(map.get("Password"));
+			System.out.println(map.get("ErrorMessage"));
+			System.out.println("----------------------");
+			
+			//passing username and password values from data table/map
+			sendText(login.userName, map.get("UserName"));
+			sendText(login.password, map.get("Password"));
+			click(login.loginBtn);
+			
+			//verifying text of error message
+			String actualError=login.errorMessage.getText().trim();
+			String expectedError=map.get("ErrorMessage");
+			Assert.assertEquals(expectedError, actualError);
+				
+		}
 		
 	}
 	

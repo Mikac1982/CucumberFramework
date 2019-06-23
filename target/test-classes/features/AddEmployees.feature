@@ -1,4 +1,5 @@
 #Author syntax team    //john.smith@wellsfargo.com
+@addEmplyee @sprint5
 Feature: Add Employee
 
   Background: 
@@ -18,19 +19,24 @@ Feature: Add Employee
       | James     | S          | West     | Dani     |
       | Jackie    | N          | East     | Ben      |
 
-@createLD
-  Scenario: Add Employee and Create Login Details
-    When I provide firstname, middlename, lastname and location
+  @regression
+  Scenario Outline: Add Employee and Create Login Details
+    When I provide "<FirstName>", "<MiddleName>", "<LastName>" and "<Location>"
     And I click on create login details
-    And I provide all mandatory fields
+    And I provide all mandatory fields "<UserName>", "<Password>" , "<ConfirmPassword>", "<ESSRole>" and "<SuperRole>"
     And I click on save button
-    Then I see employee is added successfully
+    Then I see employee "<FirstName>", "<LastName>" is added successfully
 
-@temp
+    Examples: 
+      | FirstName | MiddleName | LastName | Location | UserName | Password      | ConfirmPassword | ESSRole    | SuperRole         |
+      | Alex      | A          | Spirs    | Ben      | Cucumber | Cucumber125!@ | Cucumber125!@   | DefaultESS | DefaultSupervisor |
+
+  @regression  @temp
   Scenario: Add Employee Labels Verification
     Then I see following labels
-      | First Name  |
-      | Middle Name |
-      | Last Name   |
-      | Employee Id |
-      | Location    |
+      | First Namessss       |
+      | Middle Name          |
+      | Last Name            |
+      | Employee Id          |
+      | Location             |
+      | Create Login Details |

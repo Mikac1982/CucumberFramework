@@ -37,6 +37,31 @@ public class AddEmployeePage extends BaseClass {
 	@FindBy(xpath="//form[@id='pimAddEmployeeForm']//label")
 	public List<WebElement> addEmpLabels;
 	
+	@FindBy(xpath="//label[text()='Create Login Details']")
+	public WebElement createLogDet;
+	
+	@FindBy(id="username")
+	public WebElement userName;
+	
+	@FindBy(id="password")
+	public WebElement password;
+	
+	@FindBy(id="confirmPassword")
+	public WebElement confPassword;
+	
+	@FindBy(xpath="//div[@id='essRoleId_inputfileddiv']//input")
+	public WebElement essRole;
+	
+	@FindBy(xpath="//div[@id='essRoleId_inputfileddiv']//ul")
+	public WebElement essRoleList;
+	
+	@FindBy(xpath="//div[@id='supervisorRoleId_inputfileddiv']//input")
+	public WebElement defSup;
+	
+	@FindBy(xpath="//div[@id='supervisorRoleId_inputfileddiv']//ul")
+	public WebElement defSupList;
+	
+
 	
 	public AddEmployeePage() {
 		PageFactory.initElements(driver, this);

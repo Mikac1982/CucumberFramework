@@ -3,7 +3,6 @@ Feature: Add Location
 
 Scenario Outline: Add Location 
 
- Given I navigated to OrangeHrm
  And I see OrangeHrm logo
  And I logged in into OrangeHrm
  When I click on Admin link
