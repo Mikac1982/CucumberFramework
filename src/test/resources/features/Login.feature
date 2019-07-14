@@ -18,7 +18,7 @@ Feature: Login
     And I click login button
     Then I see error message is displayed!
 
-  @regression
+  @regression 
   Scenario: Error message Validation
     When I enter invalid username and password I see errorMessage
       | UserName | Password   | ErrorMessage         |

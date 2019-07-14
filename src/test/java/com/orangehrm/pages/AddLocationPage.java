@@ -42,8 +42,6 @@ public class AddLocationPage extends BaseClass{
 	public WebElement add;
 	
 	
-	
-	
 	public AddLocationPage() {
 		PageFactory.initElements(driver, this);
 	}

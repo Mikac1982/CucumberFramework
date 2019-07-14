@@ -11,10 +11,10 @@ import cucumber.api.junit.Cucumber;
 		,glue="com/orangehrm/steps"
 		,monochrome=true
 	//   ,dryRun=true
-	    ,tags= {"@temp"}
+	    ,tags= {"@test"}
 		,plugin= {"pretty", "html:target/cucumber-default-reports", "json:target/cucumber.json"}
 		)
 
-public class TestRunner {
-
+public class TestRunner_{
+     
 }

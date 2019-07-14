@@ -31,10 +31,10 @@ Feature: Add Employee
       | FirstName | MiddleName | LastName | Location | UserName | Password      | ConfirmPassword | ESSRole    | SuperRole         |
       | Alex      | A          | Spirs    | Ben      | Cucumber | Cucumber125!@ | Cucumber125!@   | DefaultESS | DefaultSupervisor |
 
-  @regression  @temp
+  @regression @temp
   Scenario: Add Employee Labels Verification
     Then I see following labels
-      | First Namessss       |
+      | First Namesssssss    |  
       | Middle Name          |
       | Last Name            |
       | Employee Id          |

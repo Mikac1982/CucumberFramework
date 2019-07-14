@@ -103,9 +103,11 @@ public class AddEmployeeSteps extends CommonMethods {
 	    //get all label elements
 		List<WebElement> labelList = emp.addEmpLabels;
 		
+		
+		
 		for (WebElement label:labelList) {
 			String labeltxt=label.getText();
-			
+			//if text is no empty, replace * and store it inside actualLabels
 			if (!labeltxt.isEmpty()) {
 				actualLabels.add(labeltxt.replace("*", ""));
 			}
@@ -114,9 +116,10 @@ public class AddEmployeeSteps extends CommonMethods {
 		//printing all actual values we have in the application
 		System.out.println("----Printing actual labels text from the application----");
 		
-		//the most easiest way
+		//the most easiest way to compare 
 		Assert.assertTrue(actualLabels.equals(expectedLabels));
 		
+		//actualLabels.retainAll(c); we can use this method
 	}
 	
 	

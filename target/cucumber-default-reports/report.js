@@ -74,7 +74,7 @@ formatter.step({
   "rows": [
     {
       "cells": [
-        "First Namessss"
+        "First Namesssssss"
       ]
     },
     {
@@ -109,7 +109,7 @@ formatter.match({
   "location": "AddEmployeeSteps.i_see_following_labels(DataTable)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.orangehrm.steps.AddEmployeeSteps.i_see_following_labels(AddEmployeeSteps.java:118)\n\tat ✽.I see following labels(file:src/test/resources/features/AddEmployees.feature:36)\n",
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.orangehrm.steps.AddEmployeeSteps.i_see_following_labels(AddEmployeeSteps.java:120)\n\tat ✽.I see following labels(file:src/test/resources/features/AddEmployees.feature:36)\n",
   "status": "failed"
 });
 formatter.embedding("image/png", "embedded0.png");
