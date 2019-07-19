@@ -21,6 +21,7 @@ Feature: Login
   @regression 
   Scenario: Error message Validation
     When I enter invalid username and password I see errorMessage
+    
       | UserName | Password   | ErrorMessage         |
       | Admin    | Admin1234  | Invalid Credentials  |
       | Admin1   | Syntax123! | Invalid Credentials  |

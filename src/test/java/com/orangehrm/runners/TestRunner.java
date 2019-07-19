@@ -12,7 +12,10 @@ import cucumber.api.junit.Cucumber;
 		,monochrome=true
 	//   ,dryRun=true
 	    ,tags= {"@temp"}
-		,plugin= {"pretty", "html:target/cucumber-default-reports", "json:target/cucumber.json"}
+		,plugin= {"pretty"
+				, "html:target/cucumber-default-reports"
+				, "json:target/cucumber.json"}
+		//      , "return:target/retrun.txt" -->to run failed scenarios; this file is in the target folder
 		)
 
 public class TestRunner {

@@ -11,7 +11,7 @@ import java.sql.Statement;
 import org.junit.Test;
 
 public class MetaData {
-
+	            
 	 String dbUrl="jdbc:oracle:thin:@syntaxdatabase.cdjflmucstpo.us-east-1.rds.amazonaws.com:1521:orcl";
 		String dbUsername="Syntax";
 		String dbPassword="syntax123";
@@ -52,12 +52,6 @@ public class MetaData {
 			colName=rsMetaData.getColumnName(i);
 			System.out.println(colName); 
 		}
-		
-		
-		
-		
-		
-		
 		
 		rs.close();
 		st.close();

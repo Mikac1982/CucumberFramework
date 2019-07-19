@@ -22,15 +22,13 @@ public class ProccessResultSet {
 	public void printRowData() throws SQLException {
 
 		Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-
 		Statement stat = conn.createStatement();
-
 		// ResultSet holds all results of this query
 		ResultSet rs = stat.executeQuery("select first_name, last_name from employees where job_id='IT_PROG'");
 
 		// storing results of the query as maps (keys/values as String) 
-		//and put all maps into List(collection of Maps)
-		// firts_name, last_name
+		// and put all maps into List(collection of Maps)
+		//   firts_name, last_name
 		List<Map<String, String>> rsList = new ArrayList<Map<String, String>>();
 
 		//we go row by row and taking value of the column and putting inside the Map
@@ -52,6 +50,7 @@ public class ProccessResultSet {
 	@Test
 	public void review() {
 		
+		//if we do not use while loop we will get just the results of the 1 row (the last one)
 		Map<String, String> map=new HashMap<String, String>();
 		map.put("first_name", "Alexander");
 		map.put("first_name", "Bruce");

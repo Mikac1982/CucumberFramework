@@ -35,11 +35,12 @@ public class Task2 {
 		List<Map<String, String>> rsList =new ArrayList<Map<String, String>>();
 		
 		while (rs.next()) {
+			//creating map for each row
 			Map<String, String> rsMap = new HashMap<String, String>();
 			rsMap.put("street_address", rs.getString("street_address"));
 			rsMap.put("city", rs.getString("city"));
 			rsMap.put("country_name", rs.getString("country_name"));
-			
+			//map we just created we store inside list
 			rsList.add(rsMap);
 		}
 		System.out.println(rsList);
@@ -55,24 +56,27 @@ public class Task2 {
 		Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		Statement stat = conn.createStatement();
 	    
-	//	ResultSet rs=stat.executeQuery("select street_address, city, country_name from locations l join countries c on l.country_id=c.country_id");
 		String query="select * from jobs";
 		ResultSet rs=stat.executeQuery(query);
+		
 		ResultSetMetaData rsMetaData=rs.getMetaData();	
 		
 		List<Map<String, String>> rsList =new ArrayList<Map<String, String>>();
 		
-		//loop through each row
+		//loop through each row/record from sql query result
 		while (rs.next()) {
 			Map<String, String> rsMap = new HashMap<String, String>();
 			
-			//loop through each column
+			//if we want info about columns and num of columns
+			//looping through each column(start from 1)
 			for (int i=1; i<=rsMetaData.getColumnCount(); i++) {
-			//get me the column name (i), get me the String value of that column(i)
+			//get me the column name (i), get me the value of that column(i) and convert to String
 			rsMap.put(rsMetaData.getColumnName(i), rs.getObject(i).toString());
 			
 			}
-
+			//after looping through all columns, that map we store into list
+			//than we loops through next row until we come to the very last row
+			//all maps(for each row) are stored into list
 			rsList.add(rsMap);
 		}
 		System.out.println(rsList);

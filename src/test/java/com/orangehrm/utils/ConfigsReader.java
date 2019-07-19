@@ -13,8 +13,8 @@ public class ConfigsReader {
 		
 		try {
 			FileInputStream fis=new FileInputStream(filePath);
-			prop=new Properties();
-			prop.load(fis);
+			prop=new Properties();  //initializing file
+			prop.load(fis);  //loading file
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

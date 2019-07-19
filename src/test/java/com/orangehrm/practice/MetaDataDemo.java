@@ -12,7 +12,7 @@ import org.junit.Test;
 
 public class MetaDataDemo {
 
-	 String dbUrl="jdbc:oracle:thin:@syntaxdatabase.cdjflmucstpo.us-east-1.rds.amazonaws.com:1521:orcl";
+	    String dbUrl="jdbc:oracle:thin:@syntaxdatabase.cdjflmucstpo.us-east-1.rds.amazonaws.com:1521:orcl";
 		String dbUsername="Syntax";
 		String dbPassword="syntax123";
 				
@@ -21,7 +21,6 @@ public class MetaDataDemo {
 		System.out.println("---------DataBaseMetaData----------");
 		//1. DataBaseMetaData
 		
-		
 		//1. establish connection to DB
 		Connection conn=DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		
@@ -29,7 +28,7 @@ public class MetaDataDemo {
 		//2.let's see what type of methods we have there
 		DatabaseMetaData dbMetaData=conn.getMetaData();
 		
-		//returns product you use -Oracle
+		//returns product name of DB you use -Oracle
 		//print database name
 		String dbName=dbMetaData.getDatabaseProductName();
 		System.out.println(dbName);
@@ -41,7 +40,7 @@ public class MetaDataDemo {
 		
 		System.out.println();
 		System.out.println("---------ResultSetMetaData----------");
-		//2.
+		//2.ResultSetMetaData
 		
 		//conn.createStatement().executeQuery(sql);
 		Statement st=conn.createStatement();

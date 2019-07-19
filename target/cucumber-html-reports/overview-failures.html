@@ -78,7 +78,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Syntax_OrangeHrm</td>
               <td>1</td>
-            <td>26 Jun 2019, 00:19</td>
+            <td>16 Jul 2019, 02:34</td>
     </tr>
   </tbody>
 </table>
@@ -118,27 +118,26 @@ $(document).ready(function() {
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_4283659071.html">Add Employee</a>
+      <a href="report-feature_138850923.html">As a User I should see same job title in both UI and Database</a>
     </div>
   
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_3390887955.html">@addEmplyee</a>
-           <a href="report-tag_21920026.html">@sprint5</a>
+           <a href="report-tag_224889559.html">@jobtitles</a>
+           <a href="report-tag_2147548349.html">@db</a>
            <a href="report-tag_233058432.html">@regression</a>
-           <a href="report-tag_2210145299.html">@temp</a>
       </div>
 
   
-  <span class="lead-duration duration">3.124</span>
+  <span class="lead-duration duration">2.163</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
     
 <div class="brief failed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">Add Employee Labels Verification</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Job Title Validation</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -168,7 +167,24 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">Hooks.start(Scenario)</span>
                         
-  <span class="lead-duration duration">3.372</span>
+  <span class="lead-duration duration">3.235</span>
+
+          </div>
+
+                      
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">Hooks.open()</span>
+                        
+  <span class="lead-duration duration">0.004</span>
 
           </div>
 
@@ -201,11 +217,86 @@ $(document).ready(function() {
   <div id="steps-3" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
-<div class="brief failed">
-  <span class="keyword indention">Then</span>
-  <span class="name">I see following labels</span>
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">I click on Job link</span>
   
-  <span class="lead-duration duration">3.124</span>
+  <span class="lead-duration duration">0.171</span>
+
+</div>
+
+        
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+        
+
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">I click on Job Titles</span>
+  
+  <span class="lead-duration duration">0.255</span>
+
+</div>
+
+        
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+        
+
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">I get all Job Titles from UI</span>
+  
+  <span class="lead-duration duration">1.734</span>
+
+</div>
+
+        
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+        
+
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">I execute <span class="argument">&quot;select job_title from jobs order by 1&quot;</span> from Database</span>
+  
+  <span class="lead-duration duration">0.001</span>
 
 </div>
 
@@ -216,41 +307,44 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>java.lang.AssertionError</a>
+          <a>java.lang.NullPointerException</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at com.orangehrm.steps.AddEmployeeSteps.i_see_following_labels(AddEmployeeSteps.java:118)
-	at &#10045;.I see following labels(file:src/test/resources/features/AddEmployees.feature:36)
+        <pre>java.lang.NullPointerException
+	at com.orangehrm.utils.DbUtils.getResultSetData(DbUtils.java:42)
+	at com.orangehrm.steps.JobTitleSteps.i_execute_from_Database(JobTitleSteps.java:62)
+	at &#10045;.I execute &quot;select job_title from jobs order by 1&quot; from Database(file:src/test/resources/features/JobTitles.feature:22)
 </pre>
       </div>
     </div>
   </div>
 
 
-                  <table class="step-arguments">
-                          <tr>
-                                  <td>First Namesssssss</td>
-                              </tr>
-                          <tr>
-                                  <td>Middle Name</td>
-                              </tr>
-                          <tr>
-                                  <td>Last Name</td>
-                              </tr>
-                          <tr>
-                                  <td>Employee Id</td>
-                              </tr>
-                          <tr>
-                                  <td>Location</td>
-                              </tr>
-                          <tr>
-                                  <td>Create Login Details</td>
-                              </tr>
-                      </table>
+        
+        
+
+        
+
+        
+  
+        
+
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">I see results from UI and Database are matched</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+        
+
+        
+
+
         
         
 
@@ -283,9 +377,26 @@ $(document).ready(function() {
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
+                          <span class="location name">Hooks.close()</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
                           <span class="location name">Hooks.end(Scenario)</span>
                         
-  <span class="lead-duration duration">0.722</span>
+  <span class="lead-duration duration">0.604</span>
 
           </div>
 
@@ -299,13 +410,13 @@ $(document).ready(function() {
                     <div class="embedding indention">
         <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_107199705.png" download target="_blank">
+      <a href="embeddings/embedding_-514989712.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details">
       <div class="embedding-content">
-        <img src="embeddings/embedding_107199705.png">
+        <img src="embeddings/embedding_-514989712.png">
       </div>
     </div>
   </div>

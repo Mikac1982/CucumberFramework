@@ -39,9 +39,10 @@ public class JdbcDemo {
 		//ResultSet holds all the results from sql statement -- 25 countries
 		ResultSet resultSet=statement.executeQuery("Select * from Countries");
 		
-		//4.
+		//4. Process results
 		//RETRIVE values from ResultSet:
 		//we have to use method next() to point out from row 0(column name) to row 1(country)
+		//to move cursor to the next row
 		resultSet.next();
 		
 		String columnData=resultSet.getString("Country_Name");
@@ -59,7 +60,8 @@ public class JdbcDemo {
 			System.out.println(columnData);
 		}
 		
-		//once we retrieve all data, we have to CLOSE all connections to DB:
+		//once we retrieve all data, we have to 
+		//5. CLOSE all connections to DB:
 		resultSet.close();
 		statement.close();
 		connection.close();
@@ -76,9 +78,9 @@ public class JdbcDemo {
 		ResultSet rs=stat.executeQuery("select department_id, department_name from departments");
 		
 		while(rs.next()) {
-			int columnData1=rs.getInt("Department_ID");
-			String columnData2=rs.getString("Department_Name");
-			System.out.println(columnData1+" "+columnData2);
+			int depId=rs.getInt("Department_ID");
+			String depName=rs.getString("Department_Name");
+			System.out.println(depId+" "+depName);
 		}
 		
 		rs.close();

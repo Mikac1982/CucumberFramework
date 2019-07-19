@@ -1,6 +1,7 @@
 #Author: syntax team   //john.smith@wellsfargo.com
 Feature: Add Location
 
+@location
 Scenario Outline: Add Location 
 
  And I see OrangeHrm logo
