@@ -43,7 +43,7 @@ public class Parameters {
 				//i should see code 200
 				then().statusCode(200);
 
-				
+   //https://www.amazon.com/s?k=books  //query parameter
 	}
 
 }

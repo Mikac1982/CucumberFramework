@@ -15,7 +15,7 @@ public class ApiGetDemo {
 		//when we send request, we get back one response  
 		Response response=RestAssured.when().get("http://restapi.demoqa.com/utilities/weather/city/Fairfax");
 		
-		//method that prints response in pretty format
+		//method that prints response in pretty form
 		response.prettyPrint();
 		//inside response we have status, and a lot of other things
 		int code=response.getStatusCode();
@@ -41,7 +41,6 @@ public class ApiGetDemo {
 		
 		Assert.assertTrue(body.contains("Belgrade"));
 		
-	
 		//retrieve body header date as a String
 		String header=response.getHeader("Date");
 		System.out.println(header);
